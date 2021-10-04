@@ -1,48 +1,62 @@
-body {
-    background: black;
-    margin-top: 200px;
-    margin-left: 50px;
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Times New Roman', Times, serif'
+
 }
 
-#typing {
-    width: 0ch;
-    color: white;
-    float: left;
-    font-family: sans-serif;
-    font-weight: bold;
-    font-size: 60px;
-    overflow: hidden;
-    white-space: nowrap;
-    animation: typing 5s steps(22) 1s infinite alternate;
+.container {
+    width: 100%;
+    height: 100vh;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.3), transparent), url('images/lepei-visual-kTQWNRwMiSU-unsplash.jpg');
+    background-size: cover;
+    background-position: center;
+    padding: 0 8%;
+    position: relative;
 }
 
-#typing span {
-    color: red;
+nav {
+    display: flex;
+    width: 100%;
+    align-items: center;
+    flex-wrap: wrap;
+    padding: 5px 0;
 }
 
-#crow {
-    float: left;
-    color: white;
-    font-family: consolas;
-    font-weight: bold;
-    font-size: 60px;
-    animation: crow 0.5s linear 0s infinite;
+.logo {
+    width: 120px;
+    cursor: pointer;
 }
 
-@keyframes typing {
-    from {
-        width: 0ch;
-    }
-    to {
-        width: 25ch;
-    }
+nav ul {
+    flex: 1;
+    text-align: right;
+    padding-right: 30px;
 }
 
-@keyframes crow {
-    from {
-        opacity: 0;
-    }
-    to {
-        opacity: 1;
-    }
+nav ul li {
+    display: inline-block;
+    list-style: none;
+    margin: 10px 30px;
 }
+
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    position: relative;
+}
+
+nav ul li a::after {
+    content: '';
+    width: 50%;
+    height: 3px;
+    position: absolute;
+    bottom: -5px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: #fff;
+    transition: width 0.3s;
+}
+
+nav ul li a:hover::after {}
